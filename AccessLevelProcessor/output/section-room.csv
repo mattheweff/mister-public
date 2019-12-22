@@ -1,0 +1,153 @@
+course-id,course-title,room
+ARTHIST-3-04,Introduction to World Architecture,ART350
+ARTHIST-3-03,Introduction to World Architecture,380-381T
+ARTHIST-3-02,Introduction to World Architecture,380-381T
+ARTHIST-3-05,Introduction to World Architecture,ART350
+ARTHIST-105B-02,Medieval Journeys: Introduction through the Art and Architecture,110-114
+ARTHIST-105B-03,Medieval Journeys: Introduction through the Art and Architecture,110-114
+ARTHIST-305B-02,Medieval Journeys: Introduction through the Art and Architecture,
+ARTHIST-305B-03,Medieval Journeys: Introduction through the Art and Architecture,
+ARTHIST-144B-02,Modern Design from the Eiffel Tower to Yves Saint Laurent,
+ARTHIST-344B-02,Modern Design from the Eiffel Tower to Yves Saint Laurent,
+ARTHIST-298-01,Individual Work: Art History,
+ARTHIST-660-01,Independent Study,
+ARTHIST-610-01,Teaching Praxis,
+ARTHIST-620-01,Qualifying Examination Preparation,
+ARTHIST-640-01,Dissertation Proposal Preparation,
+ARTHIST-650-01,Dissertation Research,
+ARTHIST-297-01,Honors Thesis Writing,
+ARTHIST-295-01,Visual Arts Internship,
+ARTHIST-680-01,Curricular Practical Training,
+ARTHIST-3-01,Introduction to World Architecture (Same as CLASSICS 54),OSHMAN
+ARTHIST-122-01,The Age of Revolution: Painting in Europe 1780-1830 (Same as ARTHIST 322),ART370
+ARTHIST-322-01,The Age of Revolution: Painting in Europe 1780-1830 (Same as ARTHIST 122),ART370
+ARTHIST-152-01,"The American West (Same as POLISCI 124A, ENGLISH 124, HISTORY 151, AMSTUD 124A)",OSHMAN
+ARTHIST-105B-01,"Medieval Journeys: Introduction through the Art and Architecture (Same as DLCL 123, ARTHIST 305B)",ART350
+ARTHIST-305B-01,"Medieval Journeys: Introduction through the Art and Architecture (Same as ARTHIST 105B, DLCL 123)",ART350
+ARTHIST-284B-01,"Museum Cultures: Material Representation in the Past and Present (Same as EDUC 214, ARCHLGY 134, ARCHLGY 234, CSRE 134, NATIVEAM 134, AMSTUD 134)",460-020
+ARTHIST-144B-01,Modern Design from the Eiffel Tower to Yves Saint Laurent (Same as ARTHIST 344B),ART350
+ARTHIST-344B-01,Modern Design from the Eiffel Tower to Yves Saint Laurent (Same as ARTHIST 144B),ART350
+ARTHIST-100N-01,The Artist in Ancient Greek Society (Same as CLASSICS 18N),ART370
+ARTHIST-287A-01,"The Japanese Tea Ceremony: The History, Aesthetics, and Politics Behind a National Pastime (Same as JAPAN 288)",
+ARTHIST-209C-01,"Iconoclasm (Same as ARTHIST 409, REES 409, CLASSICS 158, CLASSICS 258)",ART370
+ARTHIST-409-01,"Iconoclasm (Same as REES 409, ARTHIST 209C, CLASSICS 158, CLASSICS 258)",ART370
+ARTHIST-223-01,Living in the Material World: Imagination and Agency (Same as ARTHIST 423),ART370
+ARTHIST-423-01,Living in the Material World: Imagination and Agency (Same as ARTHIST 223),ART370
+ARTHIST-405A-01,Graduate Pedagogy Course,ART370
+ARTHIST-193-01,Jacob Lawrence's Twentieth Century: African American Art and Culture (Same as CSRE 193),CANTORARTS
+ARTHIST-238C-01,Art and the Market (Same as FRENCH 238),200-217
+ARTHIST-419-01,The Poetics of Softness,ARTGAL7
+ARTHIST-477-01,"Folk, Outsider, Self-Taught",ART370
+ARTHIST-36-01,"DANGEROUS IDEAS (Same as PHIL 36, HISTORY 3D, EALC 36, MUSIC 36H, ENGLISH 71)",200-002
+ARTHIST-802-01,TGR Dissertation,
+OSPFLOR-54-01,High Renaissance and Mannerism: the Great Italian Masters of the 15th and 16th Centuries,
+OSPPARIS-92-01,"Building Paris: Its History, Architecture, and Urban Design",
+ARTSTUDI-246-01,Individual Work: Drawing and Painting,
+ARTSTUDI-250-01,Individual Work: Sculpture,
+ARTSTUDI-261-01,Individual Work: Emerging Practices in Design & Technology,
+ARTSTUDI-272-01,Individual Work: Photography,
+ARTSTUDI-273-01,Individual Work: Experimental Media,
+ARTSTUDI-310C-01,Directed Reading: Studio,
+ARTSTUDI-297-01,Honors Thesis Exhibition,
+ARTSTUDI-173E-01,Cell Phone Photography,ARTGAL7
+ARTSTUDI-160-01,Intro to Digital / Physical Design,ARTM120
+ARTSTUDI-170-01,PHOTOGRAPHY I: BLACK AND WHITE,ART007
+ARTSTUDI-170-03,PHOTOGRAPHY I: BLACK AND WHITE,ART007
+ARTSTUDI-170-02,PHOTOGRAPHY I: BLACK AND WHITE,ART007
+ARTSTUDI-130-01,Interactive Art: Making it with Arduino (Same as ARTSTUDI 231A),ART011B
+ARTSTUDI-231A-01,Interactive Art: Making it with Arduino (Same as ARTSTUDI 130),ART011B
+ARTSTUDI-140-01,Drawing I,ART301
+ARTSTUDI-140-02,Drawing I,ART301
+ARTSTUDI-240-01,Drawing II,ART303
+ARTSTUDI-145-01,Painting I,ART307
+ARTSTUDI-145-02,Painting I,ART307
+ARTSTUDI-245-01,Painting II,ART305
+ARTSTUDI-247-01,Collage,ART220
+ARTSTUDI-249-01,Advanced Undergraduate Seminar,ART220
+ARTSTUDI-270-01,Advanced Photography Seminar,ART370
+ARTSTUDI-271-01,The View Camera,ART007
+ARTSTUDI-179-01,Digital Art I,ART011C
+ARTSTUDI-277A-01,Video Art II,ART011C
+ARTSTUDI-167-01,Introduction to Animation,ART011C
+ARTSTUDI-148A-01,Lithography,ART120
+ARTSTUDI-275-01,PHOTOGRAPHY II: Digital,ART007
+ARTSTUDI-155-01,Social Sculpture,ART130
+ARTSTUDI-147-01,Art Book Object,ART120
+ARTSTUDI-176-01,Time Shifts,ARTM120
+ARTSTUDI-171-02,PHOTOGRAPHY I: DIGITAL,ART016
+ARTSTUDI-171-03,PHOTOGRAPHY I: DIGITAL,ART016
+ARTSTUDI-171-01,PHOTOGRAPHY I: DIGITAL,ART016
+ARTSTUDI-141-01,Plein Air Painting Now,ART220
+ARTSTUDI-243-01,Anatomy for Artists (Same as SURG 243),
+ARTSTUDI-163-01,Drawing with Code,ARTGAL110
+ARTSTUDI-264-01,Advanced Interaction Design,ARTGAL110
+ARTSTUDI-136-01,The Portable Studio,ART011B
+ARTSTUDI-156Q-01,Installation Art in Time and Space,ART130
+ARTSTUDI-342C-01,M.F.A Seminar,ARTGAL7
+ARTSTUDI-801-01,TGR Project,
+ARTSTUDI-342-02,MFA Project: Tutorial,
+ARTSTUDI-342-09,MFA Project: Tutorial,
+ARTSTUDI-342-03,MFA Project: Tutorial,
+ARTSTUDI-342-04,MFA Project: Tutorial,
+ARTSTUDI-342-08,MFA Project: Tutorial,
+ARTSTUDI-342-05,MFA Project: Tutorial,
+ARTSTUDI-342-06,MFA Project: Tutorial,
+ARTSTUDI-342-07,MFA Project: Tutorial,
+ARTSTUDI-342-01,MFA Project: Tutorial,
+ME-120-01,History and Philosophy of Design,550-200
+OSPFLOR-55-01,Academy of Fine Arts: Studio Art,
+OSPFLOR-71-01,"A Studio with a View: Drawing, Painting and Informing your Aesthetic in Florence",
+OSPPARIS-42-01,EAP: Drawing with Live Models,
+OSPPARIS-43-01,EAP: Painting and Use of Color,
+OSPPARIS-44-01,EAP: Analytical Drawing and Graphic Art,
+FILMPROD-104-01,Screenwriting II: Intermediate Screenwriting (Same as FILMPROD 301),460-334
+FILMPROD-301-01,Screenwriting II: Intermediate Screenwriting (Same as FILMPROD 104),460-334
+FILMPROD-406B-01,Documentary M.F.A.Thesis Seminar II,ART115
+FILMPROD-404-01,Advanced Video Production,ART115
+FILMPROD-403-01,Advanced Documentary Directing,ART115
+FILMPROD-114-01,Introduction to Film and Video Production,ART370
+FILMPROD-106-01,Image and Sound: Filmmaking for the Digital Age,LATHROP180
+--,,
+FILMPROD-105-01,Script Analysis (Same as FILMPROD 305),ART115
+FILMPROD-305-01,Script Analysis (Same as FILMPROD 105),ART115
+FILMPROD-105-01,Script Analysis (Same as FILMPROD 305),THORNT110
+FILMPROD-305-01,Script Analysis (Same as FILMPROD 105),THORNT110
+FILMPROD-801-01,TGR Project,
+FILMSTUD-100C-02,"History of World Cinema III, 1960-Present",
+FILMSTUD-300C-02,"History of World Cinema III, 1960-Present",
+FILMSTUD-127-02,Frankenstein and Film,
+FILMSTUD-127-03,Frankenstein and Film,
+FILMSTUD-129-03,Animation and the Animated Film,ART360
+FILMSTUD-129-02,Animation and the Animated Film,ART370
+FILMSTUD-299-01,Independent Study: Film and Media Studies,
+FILMSTUD-660-01,Independent Study,
+FILMSTUD-297-01,Honors Thesis Writing,
+FILMSTUD-620-01,Area Core Examination Preparation,
+FILMSTUD-102-01,Theories of the Moving Image (Same as FILMSTUD 302),ART115
+FILMSTUD-302-01,Theories of the Moving Image (Same as FILMSTUD 102),ART115
+FILMSTUD-102-01,Theories of the Moving Image (Same as FILMSTUD 302),ART360
+FILMSTUD-302-01,Theories of the Moving Image (Same as FILMSTUD 102),ART360
+FILMSTUD-100C-01,"History of World Cinema III, 1960-Present (Same as FILMSTUD 300C)",ART115
+FILMSTUD-300C-01,"History of World Cinema III, 1960-Present (Same as FILMSTUD 100C)",ART115
+FILMSTUD-100C-01,"History of World Cinema III, 1960-Present (Same as FILMSTUD 300C)",ARTGAL7
+FILMSTUD-300C-01,"History of World Cinema III, 1960-Present (Same as FILMSTUD 100C)",ARTGAL7
+FILMSTUD-127-01,Frankenstein and Film,ART115
+FILMSTUD-127-01,Frankenstein and Film,ART007
+FILMSTUD-147-01,"Iberian and Latin American Experimental Cinemas, 1960s to the Present (Same as FILMSTUD 347)",ART350
+FILMSTUD-347-01,"Iberian and Latin American Experimental Cinemas, 1960s to the Present (Same as FILMSTUD 147)",ART350
+FILMSTUD-147-01,"Iberian and Latin American Experimental Cinemas, 1960s to the Present (Same as FILMSTUD 347)",ART360
+FILMSTUD-347-01,"Iberian and Latin American Experimental Cinemas, 1960s to the Present (Same as FILMSTUD 147)",ART360
+FILMSTUD-129-01,"Animation and the Animated Film (Same as FILMSTUD 329, AMSTUD 129)",ART115
+FILMSTUD-329-01,"Animation and the Animated Film (Same as FILMSTUD 129, AMSTUD 129)",ART115
+FILMSTUD-129-01,"Animation and the Animated Film (Same as FILMSTUD 329, AMSTUD 129)",ART007
+FILMSTUD-329-01,"Animation and the Animated Film (Same as FILMSTUD 129, AMSTUD 129)",ART007
+FILMSTUD-119-01,Science Fiction,ART360
+FILMSTUD-119-01,Science Fiction,ART115
+FILMSTUD-250B-01,"Bollywood and Beyond: An Introduction to Indian Film (Same as COMPLIT 247, GLOBAL 250)",ENCINAW101
+FILMSTUD-423-01,Seriality,ART360
+FILMSTUD-423-01,Seriality,ART350
+FILMSTUD-213-01,Global Melodrama (Same as FILMSTUD 413),ART115
+FILMSTUD-413-01,Global Melodrama (Same as FILMSTUD 213),ART115
+FILMSTUD-213-01,Global Melodrama (Same as FILMSTUD 413),ART350
+FILMSTUD-413-01,Global Melodrama (Same as FILMSTUD 213),ART350
+OSPFLOR-67-01,"The Celluloid Gaze: Gender, Identity and Sexuality in Cinema",
