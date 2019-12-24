@@ -6,6 +6,12 @@ import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
 
+/**
+Author: Matt Fishel, 2019
+Used in NameGen.java learning project. An object that provides phoenetic
+chunks used to build syllables and names.
+**/
+
 public class PhoeneticFactory {
     private List<String> commonLeadVowels;
     private List<String> unusualLeadVowels;

@@ -3,6 +3,18 @@ import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.util.Random;
 
+/**
+Author: Matt Fishel, 2019
+
+A fantasy name generator that reads from a formatted .txt and produces a
+list of fantasy names from supplied phoenetic chunks. Relies on
+PhoeneticFactory.java to supply short consonant and vowel strings from which
+syllables and names are formed.
+
+This was a learning project with attention paid to file i/o and exception
+handling.
+**/
+
 public class NameGen {
 
     //constants
