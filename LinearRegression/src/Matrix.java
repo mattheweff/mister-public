@@ -1,8 +1,22 @@
+/**
+ * Author: Matt Fishel, 2019
+ * A Matrix data type with options for construction and methods for various linear algebra
+ * operations. Part of an extra credit project for MATH 1554 at Georgia Tech, Summer 2019.
+ *
+ * NOTE: Row (m) and Column (n) parameters expect to receive indices starting at 1, following
+ * linear algebra conventions rather than the typical CS array convention. For example,
+ * setEntry(2, 5, 1.0) assigns the element of the 2nd row, 5th column to be 1.0.
+ */
+
 public class Matrix {
     public final int M, N;
     private final double[][] A;
 
     //constructors
+
+    /**
+     * Constructs the 2*2 identity matrix.
+     */
     public Matrix() {
         this(2, 2);
         double[][] a = {{1, 0},
@@ -10,25 +24,62 @@ public class Matrix {
         this.setEntries(a);
     }
 
+    /**
+     * Constructs a Matrix from a rectangular double[][] array argument.
+     * @param A The 2d double[][] array from which to construct this Matrix.
+     * @throws IllegalArgumentException if the argument array is jagged.
+     */
+    public Matrix(double[][] A) {
+        for (int i = 1; i < A.length; i++) {
+            if (A[i].length != A[0].length) {
+                throw new IllegalArgumentException("Cannot construct Matrix from jagged array.");
+            }
+        }
+        this.M = A.length;
+        this.N = A[0].length;
+        this.A = new double[this.M][this.N];
+        this.setEntries(A);
+    }
+
+    /**
+     * Constructs an m*n Matrix of all 0's.
+     * @param M the number of rows for this matrix.
+     * @param N the number of columns for this matrix.
+     */
     public Matrix(int M, int N) {
         this(new double[M][N]);
     }
 
-    public Matrix(double[][] A) {
-        this.M = A.length;
-        this.N = A[0].length;
-        this.A = A;
-    }
-
     //getters and setters
-    public void setEntry(int i, int j, double entry) {
+
+    /**
+     * Sets the element at the ith row and jth column.
+     * @param i row of the element to assign.
+     * @param j column of the element to assign.
+     * @param entry the value to assign to the element.
+     * @throws IllegalArgumentException if i is less than 1 or greather than m, or if j is less
+     * than 1 or greater than n.
+     */
+    public void setEntry(int i, int j, double entry) throws IllegalArgumentException {
+        if (i < 1 || i > M || j < 1 || j > N) {
+            throw new IllegalArgumentException("Element position not found in Matrix.");
+        }
         this.A[i - 1][j - 1] = entry;
     }
 
-    public void setEntries(double[][] a) {
+    /**
+     * Sets all Matrix entries from a 2d double array. Argument array must have m * n dimensions.
+     * Performs a per-element copy. Argument array will be unaffected by operations on the Matrix.
+     * @param a A double[][] array to assign all values to this Matrix.
+     * @throws NullPointerException if argument array is null.
+     * @throws IllegalArgumentException if argument array dimensions are invalid.
+     */
+    public void setEntries(double[][] a) throws NullPointerException, IllegalArgumentException {
+        if (a == null) {
+            throw new NullPointerException("Argument array was null.");
+        }
         if (a.length != M || a[0].length != N) {
-            System.out.println("Invalid Dimension");
-            return;
+            throw new IllegalArgumentException("Argument array has invalid dimensions.");
         }
         for (int i = 0; i < M; i++) {
             for (int j = 0; j < N; j++) {
@@ -37,10 +88,19 @@ public class Matrix {
         }
     }
 
-    public double getEntry(int m, int n) {
-        return this.A[m - 1][n - 1];
+    /**
+     * gets the element at the ith row, jth column.
+     * @param i row of element to get
+     * @param j column of element to get
+     * @return double found at the ith row, jth column
+     */
+    public double getEntry(int i, int j) {
+        return this.A[i - 1][j - 1];
     }
 
+    /**
+     * @return a deep copy of the 2d double[][] backing array.
+     */
     public double[][] getEntries() {
         double[][] entries = new double[M][N];
         for (int i = 0; i < M; i++) {
@@ -51,6 +111,10 @@ public class Matrix {
         return entries;
     }
 
+    /**
+     * Intended for retrieving a copy of Matrix A for the augmented Matrix A|B
+     * @return a deep copy Matrix of this Matrix less the nth column.
+     */
     public Matrix getA() {
         double[][] entries = new double[M][N - 1];
         for (int i = 0; i < M; i++) {
@@ -61,6 +125,10 @@ public class Matrix {
         return new Matrix(entries);
     }
 
+    /**
+     * Intended for retrieving a copy of Matrix B for the augmented Matrix A|B
+     * @return a deep copy Matrix of the nth column of this Matrix.
+     */
     public Matrix getB() {
         double[][] entries = new double[M][1];
         for (int i = 0; i < M; i++) {
@@ -69,6 +137,13 @@ public class Matrix {
         return new Matrix(entries);
     }
 
+    /**
+     * Constructs and returns an augmented Matrix from this Matrix and argument Matrix B
+     * Note: B may have more than one column.
+     * @param b The Matrix with which to augment this Matrix.
+     * @return a deep copy augmented Matrix A|B
+     * @throws IllegalArgumentException if B has more or fewer rows than A
+     */
     public Matrix augment(Matrix b) throws IllegalArgumentException {
         if (this.M != b.M) {
             throw new IllegalArgumentException("Invalid Matrix Dimensions.");
@@ -85,6 +160,9 @@ public class Matrix {
         return new Matrix(entries);
     }
 
+    /**
+     * @return a deep copy of this Matrix.
+     */
     public Matrix getCopy() {
         double[][] entries = this.getEntries();
         Matrix x = new Matrix(entries);
