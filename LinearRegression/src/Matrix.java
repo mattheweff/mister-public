@@ -1,15 +1,18 @@
 /**
  * Author: Matt Fishel, 2019
- * A Matrix data type with options for construction and methods for various linear algebra
- * operations. Part of an extra credit project for MATH 1554 at Georgia Tech, Summer 2019.
+ * A Matrix data type with options for construction and methods for various
+ * linear algebra operations. Part of an extra credit project for MATH 1554 at
+ * Georgia Tech, Summer 2019.
  *
- * NOTE: Row (m) and Column (n) parameters expect to receive indices starting at 1, following
- * linear algebra conventions rather than the typical CS array convention. For example,
- * setEntry(2, 5, 1.0) assigns the element of the 2nd row, 5th column to be 1.0.
+ * NOTE: Row (m) and Column (n) parameters expect to receive indices
+ * starting at 1, following linear algebra conventions rather than the
+ * typical CS array convention. For example, setEntry(2, 5, 1.0) assigns the
+ * element of the 2nd row, 5th column to be 1.0.
  */
 
 public class Matrix {
-    public final int M, N;
+    public final int M;
+    public final int N;
     private final double[][] A;
 
     //constructors
@@ -32,7 +35,8 @@ public class Matrix {
     public Matrix(double[][] A) {
         for (int i = 1; i < A.length; i++) {
             if (A[i].length != A[0].length) {
-                throw new IllegalArgumentException("Cannot construct Matrix from jagged array.");
+                throw new IllegalArgumentException(
+                        "Cannot construct Matrix from jagged array.");
             }
         }
         this.M = A.length;
@@ -57,29 +61,37 @@ public class Matrix {
      * @param i row of the element to assign.
      * @param j column of the element to assign.
      * @param entry the value to assign to the element.
-     * @throws IllegalArgumentException if i is less than 1 or greather than m, or if j is less
+     * @throws IllegalArgumentException if i is less than 1 or
+     * greater than m, or if j is less
      * than 1 or greater than n.
      */
-    public void setEntry(int i, int j, double entry) throws IllegalArgumentException {
+    public void setEntry(int i, int j, double entry)
+            throws IllegalArgumentException {
         if (i < 1 || i > M || j < 1 || j > N) {
-            throw new IllegalArgumentException("Element position not found in Matrix.");
+            throw new IllegalArgumentException(
+                    "Element position not found in Matrix.");
         }
         this.A[i - 1][j - 1] = entry;
     }
 
     /**
-     * Sets all Matrix entries from a 2d double array. Argument array must have m * n dimensions.
-     * Performs a per-element copy. Argument array will be unaffected by operations on the Matrix.
+     * Sets all Matrix entries from a 2d double array.
+     * Argument array must have m * n dimensions.
+     * Performs a per-element copy. Argument array will be unaffected by
+     * operations on the Matrix.
      * @param a A double[][] array to assign all values to this Matrix.
      * @throws NullPointerException if argument array is null.
-     * @throws IllegalArgumentException if argument array dimensions are invalid.
+     * @throws IllegalArgumentException if argument array
+     * dimensions are invalid.
      */
-    public void setEntries(double[][] a) throws NullPointerException, IllegalArgumentException {
+    public void setEntries(double[][] a)
+            throws NullPointerException, IllegalArgumentException {
         if (a == null) {
             throw new NullPointerException("Argument array was null.");
         }
         if (a.length != M || a[0].length != N) {
-            throw new IllegalArgumentException("Argument array has invalid dimensions.");
+            throw new IllegalArgumentException(
+                    "Argument array has invalid dimensions.");
         }
         for (int i = 0; i < M; i++) {
             for (int j = 0; j < N; j++) {
@@ -138,7 +150,8 @@ public class Matrix {
     }
 
     /**
-     * Constructs and returns an augmented Matrix from this Matrix and argument Matrix B
+     * Constructs and returns an augmented Matrix from this Matrix and
+     * argument Matrix B
      * Note: B may have more than one column.
      * @param b The Matrix with which to augment this Matrix.
      * @return a deep copy augmented Matrix A|B
@@ -170,6 +183,10 @@ public class Matrix {
     }
 
     //matrix operations
+
+    /**
+     * @return a deep copy of the transpose of this Matrix
+     */
     public Matrix getTranspose() {
         double[][] values = new double[N][M];
         for (int i = 0; i < M; i++) {
@@ -180,101 +197,217 @@ public class Matrix {
         return new Matrix(values);
     }
 
-    public Matrix leftMultiply(Matrix x) {
+    /**
+     * Constructs a new Matrix that is the result of left-multiplying
+     * this Matrix by the argument matrix
+     * @param x an argument Matrix with M columns.
+     * @return a new Matrix with the results of the operation.
+     * @throws IllegalArgumentException if argument Matrix has
+     * invalid dimensions
+     */
+    public Matrix leftMultiply(Matrix x) throws IllegalArgumentException {
+        if (x.N != this.M) {
+            throw new IllegalArgumentException(
+                    "Argument Matrix N not equal to this Matrix M.");
+        }
         double[][] values = new double[x.M][this.N];
         for (int i = 1; i <= x.M; i++) {
             for (int j = 1; j <= this.N; j++) {
                 for (int k = 1; k <= this.M; k++) {
-                    values[i - 1][j - 1] += x.getEntry(i, k) * this.getEntry(k, j);
+                    values[i - 1][j - 1] += x.getEntry(i, k)
+                            * this.getEntry(k, j);
                 }
             }
         }
         return new Matrix(values);
     }
 
-    public Matrix rightMultiply(Matrix x) {
+    /**
+     * Right multiply this Matrix by parameter matrix with N rows.
+     * @param x Matrix with N rows.
+     * @return new Matrix with results of operation
+     * @throws IllegalArgumentException if argument Matrix M not equal
+     * to this Matrix N.
+     */
+    public Matrix rightMultiply(Matrix x) throws IllegalArgumentException {
+        if (this.N != x.M) {
+            throw new IllegalArgumentException(
+                    "Argument Matrix M not equal to this Matrix N.");
+        }
         double[][] values = new double[this.M][x.N];
         for (int i = 1; i <= this.M; i++) {
             for (int j = 1; j <= x.N; j++) {
                 for (int k = 0; k <= x.M; k++) {
-                    values[i - 1][j - 1] += this.getEntry(i, k) * x.getEntry(k, j);
+                    values[i - 1][j - 1] += this.getEntry(i, k)
+                            * x.getEntry(k, j);
                 }
             }
         }
         return new Matrix(values);
     }
 
-    public void rowSwap(int r1, int r2) {
-        double[] temp= this.A[r1 - 1];
+    /**
+     * performs a row swap operation on this Matrix.
+     * @param r1 First row to swap.
+     * @param r2 2nd row to swap.
+     * @throws IllegalArgumentException if r1 or r2 are
+     * out of bounds for this Matrix.
+     */
+    public void rowSwap(int r1, int r2) throws IllegalArgumentException {
+        if (r1 < 1 || r1 > M || r2 < 1 || r2 > M) {
+            throw new IllegalArgumentException(
+                    "A row parameter is out of bounds for this Matrix.");
+        }
+        double[] temp = this.A[r1 - 1];
         this.A[r1 - 1] = this.A[r2 - 1];
         this.A[r2 - 1] = temp;
     }
 
-    public void rowScale(int i, double scalar) {
+    /**
+     * Scales a row of this Matrix by a double scalar value.
+     * @param i the index of the row to scale.
+     * @param scalar the value to scale the row by.
+     * @throws IllegalArgumentException if Row i is out of bounds
+     * for this Matrix.
+     */
+    public void rowScale(int i, double scalar) throws IllegalArgumentException {
+        if (i < 1 || i > M) {
+            throw new IllegalArgumentException(
+                    "Row out of bounds for this Matrix.");
+        }
         for (int j = 0; j < this.N; j++) {
             this.A[i - 1][j] = this.A[i - 1][j] * scalar + 0.0;
         }
     }
 
-    public void rowReplace(int r1, int r2, double scalar) {
+    /**
+     * Performs a row replacement operation on this Matrix. r1 is replaced with
+     * r1 + r2*scalar.
+     * @param r1 The row to replace.
+     * @param r2 The row to add to the row to replace.
+     * @param scalar The scalar by which to multiply r2.
+     * @throws IllegalArgumentException if r1 or r2 is out of bounds for
+     * this Matrix.
+     */
+    public void rowReplace(int r1, int r2, double scalar)
+            throws IllegalArgumentException {
+        if (r1 < 1 || r1 > M || r2 < 1 || r2 > M) {
+            throw new IllegalArgumentException(
+                    "A row parameter is out of bounds for this Matrix.");
+        }
         for (int j = 0; j < this.N; j++) {
             this.A[r1 - 1][j] = this.A[r1 - 1][j]
                                 - (this.A[r2 - 1][j] * scalar) + 0.0;
         }
     }
 
+    /**
+     * Constructs a new matrix and solves to Reduced Row Echelon Form using
+     * a partial pivoting algorithm.
+     * @return the RREF form of this Matrix.
+     */
     public Matrix rowEchelon() {
-        Matrix a = this.getCopy();
-        int i = 1;
-        int j = 1;
-        while (j <= a.N && i <= a.M) {
-            int k = i;
+        try {
+            Matrix a = this.getCopy();
+            int i = 1;
+            int j = 1;
+            while (j <= a.N && i <= a.M) {
+                int k = i;
 
-            for (int p = k + 1; p <= M; p++) {
-                if (Math.abs(a.getEntry(p, j)) > Math.abs(a.getEntry(k, j))) {
-                    k = p;
-                }
-            }
-
-             if (a.getEntry(k, j) == 0.0) {
-                j++;
-            } else {
-                if (k != i) {
-                    a.rowSwap(k, i);
-                }
-                for (int p = 1; p <= M; p++) {
-                    if (p != i) {
-                        double scalar = a.getEntry(p, j) / a.getEntry(i, j);
-                        a.rowReplace(p, i, scalar);
+                for (int p = k + 1; p <= M; p++) {
+                    if (Math.abs(a.getEntry(p, j))
+                            > Math.abs(a.getEntry(k, j))) {
+                        k = p;
                     }
                 }
-                double rowScalar = 1.0 / a.getEntry(i, j);
-                a.rowScale(i, rowScalar);
-                i++;
-                j++;
+
+                if (a.getEntry(k, j) == 0.0) {
+                    j++;
+                } else {
+                    if (k != i) {
+                        a.rowSwap(k, i);
+                    }
+                    for (int p = 1; p <= M; p++) {
+                        if (p != i) {
+                            double scalar = a.getEntry(p, j) / a.getEntry(i, j);
+                            a.rowReplace(p, i, scalar);
+                        }
+                    }
+                    double rowScalar = 1.0 / a.getEntry(i, j);
+                    a.rowScale(i, rowScalar);
+                    i++;
+                    j++;
+                }
             }
+            return a;
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
         }
-        return a;
+        return null;
     }
 
     // static least-squares methods
+
+    /**
+     * Finds x-hat, the least squares solution of Ax = b.
+     * @param a an m*n Matrix
+     * @param b an n*1 column vector
+     * @return x-hat, the Least-squares solution to Ax = b,
+     * an m*1 column vector Matrix.
+     * @throws IllegalArgumentException if columns of Matrix A not equal to Rows
+     * of Matrix B, or if Matrix B does not have exactly 1 column.
+     * @throws NullPointerException if either parameter is null.
+     */
     public static Matrix leastSquares(Matrix a, Matrix b)
-        throws IllegalArgumentException {
-        Matrix aTranspose = a.getTranspose();
-        Matrix aTa = a.leftMultiply(aTranspose);
-        Matrix aTb = b.leftMultiply(aTranspose);
-        return aTa.augment(aTb).rowEchelon().getB();
+        throws IllegalArgumentException, NullPointerException {
+        if (a == null || b == null) {
+            throw new NullPointerException("Parameter matrix was null.");
+        }
+        if (a.N != b.M) {
+            throw new IllegalArgumentException(
+                    "Column # of Matrix A not equal to Row # of Matrix B.");
+        }
+        if (b.N != 1) {
+            throw new IllegalArgumentException(
+                    "Matrix B is not a column vector.");
+        }
+        try {
+            Matrix aTranspose = a.getTranspose();
+            Matrix aTa = a.leftMultiply(aTranspose);
+            Matrix aTb = b.leftMultiply(aTranspose);
+            return aTa.augment(aTb).rowEchelon().getB();
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
+    /**
+     * Solves for x-hat treating parameter Matrix as an augmented Matrix.
+     * @param m The augmented Matrix.
+     * @return the m*1 least-squares solution
+     * @throws IllegalArgumentException if Matrix m has only 1 column.
+     * @throws NullPointerException if Matrix m is null.
+     */
     public static Matrix leastSquares(Matrix m)
-        throws IllegalArgumentException {
+        throws IllegalArgumentException, NullPointerException {
+        if (m == null) {
+            throw new NullPointerException("Parameter Matrix was null.");
+        }
+        if (m.N < 2) {
+            throw new IllegalArgumentException(
+                    "Matrix not an augmented Matrix.");
+        }
         Matrix aTranspose = m.getA().getTranspose();
         Matrix aTa = m.getA().leftMultiply(aTranspose);
         Matrix aTb = m.getB().leftMultiply(aTranspose);
         return aTa.augment(aTb).rowEchelon().getB();
     }
 
-    // custom toString
+    /**
+     * Custom toString() method
+     * @return a String object representing this Matrix's elements.
+     */
     public String toString() {
         String s = "";
         s = s.concat(String.format("%d x %d\n", M, N));
@@ -288,27 +421,5 @@ public class Matrix {
             }
         }
         return s;
-    }
-
-    // test method
-    public static void main(String[] args) {
-        double[][] u = {{1, -2, 12.8},
-                        {0, -2, 4.5},
-                        {0, -2, 0}};
-        Matrix c = new Matrix(u);
-        System.out.println(c);
-        System.out.println(c.rowEchelon());
-        System.out.println(c.getA());
-        System.out.println(c.getB());
-        try {
-            System.out.println(Matrix.leastSquares(c.getA(), c.getB()));
-        } catch (IllegalArgumentException e) {
-            System.out.println("yeet");
-        }
-        try {
-            System.out.println(Matrix.leastSquares(c));
-        } catch (IllegalArgumentException e) {
-            System.out.println("yort");
-        }
     }
 }
