@@ -1,0 +1,17 @@
+**whitespace before and between entries. row headers must remain unchanged**
+
+COMMON_LEAD_CONSONANTS: R T Th P Ph S D F H L N M
+UNUSUAL_LEAD_CONSONANTS: Qu Y Ps W Sm Sn Fr G Gh J Jh K Kr Kl Kh V B Br Sc Sh St
+EXOTIC_LEAD_CONSONANTS: Q Yh Sz Sch Hr Z Zh X Sc Sk
+
+COMMON_LEAD_VOWELS: A E Ea Ee O Au Ei Ia
+UNUSUAL_LEAD_VOWELS: Aa Ae Ai Ao Eo Ey I Ie Io Oa Oe Ou U Ua
+EXOTIC_LEAD_VOWELS: Ay Ii Y Oi Oy Yy Ui Uo Ye Yi Yo Oo Ue
+
+COMMON_FOLLOW_CONSONANTS: r t th s d h l ll ck ch n ng m
+UNUSUAL_FOLLOW_CONSONANTS: k kh qu w tt ss st p f ff g gh j z zz x v b mm
+EXOTIC_FOLLOW_CONSONANTS: q ph y xx xh zh vv bb mh
+
+COMMON_FOLLOW_VOWELS: a e ea ee i o u
+UNUSUAL_FOLLOW_VOWELS: ai ao au ei eo ia ie io oa oo ou ua uo y ya yi yo
+EXOTIC_FOLLOW_VOWELS: aa ae ay eu ey iu oe oi oy ue ui uu uy yu yy
